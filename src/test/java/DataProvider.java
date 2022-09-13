@@ -8,7 +8,7 @@ public class DataProvider {
 
 
     private static Stream<Arguments> pageTitleSet() {
-        log.info("Data provider started.");
+        log.info(">>>>>>>> Data provider started <<<<<<<<<");
         return Stream.of(
                 Arguments.of("https://sii.pl/", "Rozwiązania i usługi IT, inżynierii i BPO - Sii Polska"),
                 Arguments.of("https://onet.pl/", "Onet – Jesteś na bieżąco"),

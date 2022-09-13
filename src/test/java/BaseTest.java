@@ -14,7 +14,7 @@ public class BaseTest {
     @BeforeAll
     static void setupDriver() {
         WebDriverManager.chromedriver().setup();
-        log.info("WebDriver is set up.");
+        log.info(">>>>>>>> WebDriver is set up <<<<<<<<<");
 
     }
 
@@ -22,12 +22,12 @@ public class BaseTest {
     void setup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        log.info("Chrome window is Maximized.");
+        log.info(">>>>>>>> Chrome window is Maximized <<<<<<<<<");
     }
 
     @AfterEach
     void tearDown() {
         driver.quit();
-        log.info("WebDriver is closed.");
+        log.info(">>>>>>>> WebDriver is closed <<<<<<<<<");
     }
 }

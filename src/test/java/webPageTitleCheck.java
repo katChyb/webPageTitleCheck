@@ -18,7 +18,7 @@ public class webPageTitleCheck extends BaseTest {
     void checkTitle(String pageUrl, String expectedTitle) {
         driver.get(pageUrl);
         String actualTitle = driver.getTitle();
-        log.info("My website adress id: " + pageUrl);
+        log.info(">>>>>>>> My website adress id: " + pageUrl + "<<<<<<<<<");
 
         assertThat(actualTitle).isEqualTo(expectedTitle);
 
