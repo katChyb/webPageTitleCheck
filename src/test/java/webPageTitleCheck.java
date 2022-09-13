@@ -1,31 +1,15 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class webPageTitleCheck {
+public class webPageTitleCheck extends BaseTest {
 
-    WebDriver driver;
 
-    @BeforeAll
-    static void setupDriver() {
-        WebDriverManager.chromedriver().setup();
-    }
+    private static Logger log = LoggerFactory.getLogger(webPageTitleCheck.class);
 
-    @BeforeEach
-    void setup() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
-
-    @AfterEach
-    void tearDown() {
-        driver.quit();
-    }
 
     @Tag("regression")
     @DisplayName("Page title validation test")
@@ -34,6 +18,8 @@ public class webPageTitleCheck {
     void checkTitle(String pageUrl, String expectedTitle) {
         driver.get(pageUrl);
         String actualTitle = driver.getTitle();
+        log.info("My website adress id: " + pageUrl);
+
         assertThat(actualTitle).isEqualTo(expectedTitle);
 
     }
