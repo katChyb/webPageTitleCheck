@@ -1,3 +1,5 @@
+package Configuration;
+
 import org.junit.jupiter.params.provider.Arguments;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
